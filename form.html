@@ -28,20 +28,18 @@
   <!-- show our formData as it is being typed -->
     <div id="contrato" style="display: none" >
         CONTRATO DE PRESTAÇÃO DE SERVIÇOS
-        CLIENTE: CLIENTE:
-        Rg
-        CPF
-        Rua
-        12248-503
-        TELEFONE:
-        E-MAIL:
-        DATA:
-        LOCAL:
-        HORÁRIO:
-        Nº DE CONVIDADOS:
-        DURAÇÃO: 5H
-        TIPO DE EVENTO: Casamento
-        TIPO DE CARDÁPIO: Coquetel com comidinhas
+        CLIENTE: {{clienteData.name}}
+        Rg: {{clienteData.rg}}
+        CPF: {{clienteData.CPF}}
+        TELEFONE: {{clienteData.telefone}}
+        E-MAIL: {{clienteData.email}}
+        DATA: {{eventoData.data}}
+        LOCAL: {{eventoData.local}}
+        HORÁRIO: {{eventoData.horario}}
+        Nº DE CONVIDADOS: {{eventoData.qtd}}
+        DURAÇÃO: {{eventoData.duracao}}H
+        TIPO DE EVENTO: {{eventoData.tipo}}
+        TIPO DE CARDÁPIO: {{cardapioData.tipo}}
 
         CONSULTORA:  Neide
         O presente instrumento tem como objetivo firmar o compromisso de prestação de serviços entre:
