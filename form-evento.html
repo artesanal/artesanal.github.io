@@ -2,16 +2,42 @@
 <div class="form-group">
     <div class="radio">
         <label>
-           <input type="radio" ng-model="formData.type" value="xbox" checked>
-           I like XBOX
+           <input type="radio" ng-model="eventoData.tipo" value="Empresarial">
+           Empresarial
         </label>
     </div>
     <div class="radio">
         <label>
-            <input type="radio" ng-model="formData.type" value="ps">
-            I like PS4
+            <input type="radio" ng-model="eventoData.tipo" value="Casamento" checked>
+            Casamento
         </label>
     </div>
+    <div class="radio">
+        <label>
+            <input type="radio" ng-model="eventoData.tipo" value="Aniversário">
+            Aniversário
+        </label>
+    </div>
+</div>
+<div class="form-group">
+    <label for="data">Data</label>
+    <input type="date" id="dataEvento" class="form-control" name="data" ng-model="eventoData.data">
+</div>
+<div class="form-group">
+    <label for="local">Local</label>
+    <input type="text" id="localEvento" class="form-control" name="local" ng-model="eventoData.local">
+</div>
+<div class="form-group">
+    <label for="horario">Horário</label>
+    <input type="time" id="horarioEvento" class="form-control" name="horario" ng-model="eventoData.horario">
+</div>
+<div class="form-group">
+    <label for="qtd">Nº de convidados</label>
+    <input type="number" id="qtdEvento" class="form-control" name="qtd" ng-model="eventoData.qtd">
+</div>
+<div class="form-group">
+    <label for="ducarao">Duração</label>
+    <input type="number" id="duracaoEvento" class="form-control" name="duracao" ng-model="eventoData.duracao">
 </div>
 
 <div class="form-group row">

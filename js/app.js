@@ -58,7 +58,9 @@ angular.module('formApp', [ 'ngAnimate', 'ui.router'])
     $scope.formData = {};
     $scope.clienteData = {};
     $scope.eventoData = {};
+    $scope.cardapioData = {};
     $scope.pagamentoData = {};
+
 
 
 
