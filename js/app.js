@@ -1,7 +1,7 @@
 
 // create our angular app and inject ngAnimate and ui-router 
 // =============================================================================
-angular.module('formApp', ['ngAnimate', 'ui.router'])
+angular.module('formApp', [ 'ngAnimate', 'ui.router'])
 
 // configuring our routes 
 // =============================================================================
@@ -56,36 +56,21 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
     
     // we will store all of our form data in this object
     $scope.formData = {};
+    $scope.clienteData = {};
+    $scope.eventoData = {};
+    $scope.pagamentoData = {};
+
 
 
 
     
     // function to process the form
     $scope.processForm = function() {
-        /*const pdf = new jsPDF();
-// select the button
-        let button = document.querySelector('button');
-        let prep = document.getElementById("HTMLtoPDF");
-
-        button.addEventListener('click', printPDF);
-// actual PDF options
-        function printPDF() {
-            // @param 1 - Coordinate (in units declared at inception of PDF document) against left edge of the page
-            // @param 2 - Coordinate (in units declared at inception of PDF document) against upper edge of the page
-            // @param 3 - String or array of strings to be added to the page. Each line is shifted one line down per font, spacing settings declared before this call.
-            pdf.fromHTML(`${prep.innerHTML}`, 10, 10);
-            // save the PDF document (downloadable)
-            pdf.save("contrato");
-
-        }*/
-        let prep = document.getElementById("HTMLtoPDF").textContent;
-
-
-        var arroz = prep;
+        let prep = document.getElementById("contrato").textContent;
         var docDefinition = { content:
             [
                 {
-                    text: arroz,
+                    text: prep,
                     style: 'header'
 
                 },
@@ -105,5 +90,16 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
     };
 
     
-});
+})
+
+.controller('tabs', function($scope) {
+    this.tab = 1;
+
+    this.selectTab = function (setTab){
+        this.tab = setTab;
+    };
+    this.isSelected = function(checkTab) {
+        return this.tab === checkTab;
+    };
+})
 

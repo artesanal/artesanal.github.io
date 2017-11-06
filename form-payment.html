@@ -1,13 +1,65 @@
-<div class="btn-group" align="center">
-    <button type="button" class="btn btn-primary" value="cartao">Cartão</button>
-    <button type="button" class="btn btn-primary" value="cheque">Cheque</button>
-    <button type="button" class="btn btn-primary" value="dinheiro">Dinheiro</button>
-</div>
-
-<!--<div class="form-group">-->
-    <!--<label for="teste2">Email</label>-->
-    <!--<input type="text" class="form-control" name="teste2" ng-model="formData.teste2">-->
+<!--<div class="btn-group">-->
+    <!--<button type="button" class="btn btn-primary" value="cartao">Cartão</button>-->
+    <!--<button type="button" class="btn btn-primary" value="cheque">Cheque</button>-->
+    <!--<button type="button" class="btn btn-primary" value="dinheiro">Dinheiro</button>-->
 <!--</div>-->
+<section class="tab" ng-controller="tabs as panel">
+    <ul id="menuPagamento" class="nav nav-tabs" role="tablist">
+        <li ng-class="{active:panel.isSelected(1) }" class="nav-item">
+            <a href ng-click="panel.selectTab(1)">Dinheiro</a>
+        </li>
+        <li ng-class="{active:panel.isSelected(2)  }" class="nav-item">
+            <a href ng-click="panel.selectTab(2)">Cartão</a>
+        </li>
+        <li ng-class="{active:panel.isSelected(3)}" class="nav-item">
+            <a href ng-click="panel.selectTab(3)">Cheque</a>
+        </li>
+    </ul>
+    <br />
+
+    <div ng-show="panel.isSelected(1)">
+        <p class="longDescription">
+            Pagamento em Dinheiro
+        </p>
+
+    </div>
+    <div ng-show="panel.isSelected(2)">
+        <p class="longDescription">
+            <label>Valor: </label>
+            <input type="number" name="valor">
+            </br>
+            <label>Paracelas</label>
+            <select class="form-control" id="sel1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+            </select>
+
+        </p>
+    </div>
+    <div ng-show="panel.isSelected(3)">
+        <p class="longDescription">
+            Pagamento em Cheque
+        </p>
+    </div><br />
+
+</section>
+
+
+
 
 <div class="form-group row">
     <div class="col-xs-6 col-xs-offset-3">
