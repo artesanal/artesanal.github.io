@@ -75,7 +75,7 @@ angular.module('formApp', [ 'ngAnimate', 'ui.router'])
                     text: prep,
                     style: 'header'
 
-                },
+                }
 
             ],
             styles:
