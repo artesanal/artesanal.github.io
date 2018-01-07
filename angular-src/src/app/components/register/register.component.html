@@ -1,0 +1,32 @@
+<div class="jumbotron">
+  <h1>Register</h1>
+  <form (submit)="onRegisterSubmit()">
+    <fieldset>
+      <!--<legend>Register</legend>-->
+
+      <div class="form-group">
+        <label for="nameInput">Name</label>
+        <input type="text" class="form-control" id="nameInput" aria-describedby="Name" placeholder="Enter Name" [(ngModel)]="name" name="name">
+      </div>
+
+      <div class="form-group">
+        <label for="usernameInput">Username</label>
+        <input type="text" class="form-control" id="usernameInput" aria-describedby="Username" placeholder="Enter Username" [(ngModel)]="username" name="username">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="email" name="email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="InputPassword1">Password</label>
+        <input type="password" class="form-control" id="InputPassword1" placeholder="Password" [(ngModel)]="password" name="password">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </fieldset>
+  </form>
+
+</div>

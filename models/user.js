@@ -29,7 +29,7 @@ module.exports.getUserById = function (id, callback) {
   User.findById(id, callback);
 };
 module.exports.getUserByUsername = function (username, callback) {
-    const query = {username: username}
+    const query = {username: username};
     User.findOne(query, callback);
 };
 
@@ -40,7 +40,7 @@ module.exports.addUser = function (newUser, callback) {
           newUser.password = hash;
           newUser.save(callback);
       });
-  })
+  });
 };
 
 module.exports.comparePassword = function (candidatePassword, hash, callback) {

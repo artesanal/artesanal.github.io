@@ -48,6 +48,10 @@ app.get('/', (req,res) =>{
 });
 app.use('/users', users);
 
+app.get('*', (req, res) =>{
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
 //listen the port | Start Server
 app.listen(port, () =>{
     console.log('server startd on port '+port);
