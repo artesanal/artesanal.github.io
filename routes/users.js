@@ -4,6 +4,7 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const User = require('../models/user');
+const Contract = require('../models/contract');
 
 //register router
 router.post('/register', (req, res, next)=>{
@@ -67,3 +68,26 @@ router.get('/validate', (req, res, next)=>{
 });
 
 module.exports = router;
+
+
+//register Contracts
+router.post('/register/contrato', (req, res, next)=>{
+    let newContrato = new Contract({
+        name: req.body.name,
+        rg: req.body.rg,
+        cpf: req.body.cpf,
+        tipo: req.body.tipo,
+        espaco: req.body.espaco
+    });
+    Contract.addContrato(newContrato, (err, contrato)=>{
+        if(err){
+            res.json({success: false, msg:'Failed to register User'});
+        }else {
+            res.json({success:true, msg:'User Registered'});
+        }
+    })
+});
+router.get('/eventos', (req, res, next) => {
+    res.json({contrato: req.getContratoAll});
+
+});

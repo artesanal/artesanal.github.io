@@ -8,6 +8,7 @@ export class AuthService {
 
   authToken: any;
   user: any;
+  contract: any;
 
   constructor(private http:Http) { }
 
@@ -55,4 +56,23 @@ export class AuthService {
     this.user = null;
     localStorage.clear();
   }
+
+
+
+  //Salvar Contratos
+  registerContrato(contrato){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.post('http://localhost:3000/users/register/contrato', contrato, {headers:headers})
+      .map(res => res.json());
+  }
+
+  getContrato(){
+    return this.http.get('http://localhost:3000/users/eventos')
+      .map(res => res.json());
+  }
+
+
+
+
 }

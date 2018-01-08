@@ -1,0 +1,33 @@
+<form class="container" (submit)="onRegisterSubmit()">
+  <h1 class="display-3">Contrato</h1>
+  <div class="jumbotron">
+    <h2>Contratantes</h2>
+
+    <label>Nome</label>
+    <input input type="text" class="form-control" aria-describedby="Name" placeholder="Enter Name" [(ngModel)]="name" name="name">
+
+    <label>RG</label>
+    <input type="number" class="form-control" placeholder="xx.xxx.xx" [(ngModel)]="rg" name="rg">
+
+    <label>CPF</label>
+    <input type="number" class="form-control" placeholder="xxx.xxx.xxx-xx" [(ngModel)]="cpf" name="cpf">
+
+  </div>
+  <div class="jumbotron" >
+    <h2>Evento</h2>
+
+    <label>Tipo</label>
+    <input type="text" class="form-control" placeholder="Casamento, aniversario, empresarial" [(ngModel)]="tipo" name="tipo">
+
+    <label>Espaço</label>
+    <input type="text" class="form-control" placeholder="Le Six" [(ngModel)]="espaco" name="espaco">
+  </div>
+  <!--<div class="jumbotron">
+    <h2>Serviço</h2>
+  </div>
+  <div class="jumbotron">
+    <h2>Verificar</h2>
+  </div>-->
+  <button type="submit" value="Salvar" class="btn btn-outline-success">Salvar</button>
+</form>
+

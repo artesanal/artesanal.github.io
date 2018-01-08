@@ -1,0 +1,22 @@
+*{
+  margin:0;
+  padding: 0;
+}
+.box{
+  padding-top: 5%;
+  float: right;
+  width: 85%;
+  padding-left: 0.5%;
+  padding-right: 0.5%;
+  margin-left: 15%;
+  text-align: center;
+  background-color: white;
+
+}
+.menus{
+  position: fixed;
+  width: 100%;
+  display: block;
+  z-index: 999;
+
+}
