@@ -36,6 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 
 
+
 //passport Middleware
 app.use(passport.initialize());
 app.use(passport.session());
@@ -48,9 +49,9 @@ app.get('/', (req,res) =>{
 });
 app.use('/users', users);
 
-app.get('*', (req, res) =>{
+/*app.get('*', (req, res) =>{
     res.sendFile(path.join(__dirname, 'public/index.html'));
-});
+});*/
 
 //listen the port | Start Server
 app.listen(port, () =>{

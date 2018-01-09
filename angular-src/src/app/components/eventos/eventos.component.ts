@@ -1,3 +1,4 @@
+///<reference path="../../../../node_modules/rxjs/Observable.d.ts"/>
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
@@ -10,7 +11,12 @@ import {FlashMessagesService} from "angular2-flash-messages";
 })
 export class EventosComponent implements OnInit {
 
-   contrato: any = [];
+   contrato: Object;
+   name: String;
+   rg: Number;
+   cpf: Number;
+   tipo: String;
+   espaco: String;
 
 
    constructor(
@@ -20,14 +26,28 @@ export class EventosComponent implements OnInit {
    ) { }
 
    ngOnInit() {
-     this.authService.getContrato().subscribe(eventos => {
-         this.contrato = eventos;
-         console.log(this.contrato);
-       },
-       err => {
-         console.log(err);
-        return false;
-       });
+     let contratos = {
+       name: this.name,
+       rg: this.rg,
+       cpf: this.cpf,
+       tipo: this.tipo,
+       espaco: this.espaco
+     }
+     this.authService.authenticateContrato(contratos).subscribe(data =>{
+       if(data.success){
+         this._flashMessages.show('You Have contracts', {cssClass: 'alert-success', timeout: 5000});
+         this.authService.getContrato().subscribe(evento => {
+             this.contrato = evento;
+           },
+           err => {
+             console.log(err);
+             return false;
+           });
+       } else {
+         this._flashMessages.show('You suck', {cssClass: 'alert-danger', timeout: 5000});
+       }
+     })
+
    }
 }
 

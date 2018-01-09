@@ -87,7 +87,29 @@ router.post('/register/contrato', (req, res, next)=>{
         }
     })
 });
-router.get('/eventos', (req, res, next) => {
-    res.json({contrato: req.getContratoAll});
+router.get('/eventos', passport.authenticate('jwt', {session:false}), (req, res, next) => {
+    res.json({contrato: req.contrato});
+});
 
+router.post('/contratos', (req, res, next)=>{
+
+    Contract.getContratoAll( (err, contrato)=>{
+        if(err) throw err;
+        if (contrato){
+            res.json({
+                success: true,
+                contrato: {
+                    id: contrato._id,
+                    name: contrato.name,
+                    rg: contrato.rg,
+                    cpf: contrato.cpf,
+                    tipo: contrato.tipo,
+                    espaco: contrato.espaco
+                }
+            });
+        } else {
+            return res.json({success: false, msg: 'contrato not found!'})
+        }
+        console.log(contrato);
+    });
 });

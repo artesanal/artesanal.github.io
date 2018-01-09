@@ -30,16 +30,15 @@ const ContratoSchema = mongoose.Schema({
 
 const Contract = module.exports = mongoose.model('Contract', ContratoSchema);
 
-module.exports.getContratoAll = Contract.find({}, function(err, contratos) {
-    if (err) throw err;
-    //console.log(contratos);
-});
+module.exports.getContratoAll = function (name, callback) {
+    const query = {name: name};
+    Contract.find(query, callback);
 
-/*
-module.exports.getUserByUsername = function (username, callback) {
-    const query = {username: username};
-    User.findOne(query, callback);
-};*/
+};
+
+module.exports.getContratoById = function (id, callback) {
+    User.findById(id, callback);
+};
 
 module.exports.addContrato = function (newContrato, callback){
     newContrato.save(callback);

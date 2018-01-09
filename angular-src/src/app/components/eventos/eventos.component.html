@@ -1,10 +1,12 @@
 
-
+<div *ngIf="contrato" class="jumbotron">
+  <h1 class="page-header">Hello, {{contrato.name}}!</h1>
+</div>
 
 
 <div class="container" >
   <div class="row">
-      <div class="card border-primary mb-3" style="max-width: 20rem; margin-right: 2%; margin-left: 1%;" *ngFor="let evento of eventos">
+      <div class="card border-primary mb-3" style="max-width: 20rem; margin-right: 2%; margin-left: 1%;" *ngFor="let contrato of contratos">
         <div class="card-header">{{contrato.tipo}}</div>
         <div class="card-body text-primary">
           <h4 class="card-title">Arroz</h4>
@@ -13,3 +15,4 @@
       </div>
   </div>
 </div>
+
