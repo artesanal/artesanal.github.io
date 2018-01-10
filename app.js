@@ -22,6 +22,7 @@ const app = express();
 
 const contratos = require('./routes/contratos');
 const users = require('./routes/users');
+const api = require('./routes/api');
 
 //variable for port
 const port = 3000;
@@ -35,6 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //body parser middleware
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false}));
 
 
 
@@ -52,11 +54,12 @@ app.get('/', (req,res) =>{
 
 app.use('/users', users);
 app.use('/contracts', contratos);
-
+app.use('/api', api);
+/*
 app.get('*', (req, res) =>{
     res.sendFile(path.join(__dirname, 'public/index.html'));
 });
-
+*/
 //listen the port | Start Server
 app.listen(port, () =>{
     console.log('server startd on port '+port);

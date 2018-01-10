@@ -15,7 +15,8 @@
     "jsonwebtoken": "*",
     "mongoose": "*",
     "passport": "*",
-    "passport-jwt": "*"
+    "passport-jwt": "*",
+    "pdfmake": "^0.1.35"
   },
   "author": "Victor Salvattori",
   "license": "ISC",

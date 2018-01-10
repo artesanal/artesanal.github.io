@@ -1,18 +1,32 @@
-
-<div *ngFor="let bola of bolas" class="jumbotron">
-  <h1 class="page-header">Hello, {{bolas.name}}!</h1>
-</div>
-
-
 <div class="container" >
   <div class="row">
       <div class="card border-primary mb-3" style="max-width: 20rem; margin-right: 2%; margin-left: 1%;" *ngFor="let contrato of contratos">
-        <div class="card-header">{{contrato.tipo}}</div>
+        <div class="card-header"><h1>{{contrato.name}}</h1></div>
         <div class="card-body text-primary">
-          <h4 class="card-title">Arroz</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h4 class="card-title">{{contrato.dEvento}}</h4>
+          <p class="card-text">
+            {{contrato.email}}<br>
+            {{contrato.espaco}}<br>
+            {{contrato.duracao}}<br>
+            {{contrato.tipo}}<br>
+            {{contrato.convidados}}
+          </p>
         </div>
       </div>
   </div>
 </div>
 
+<div class="card border-primary mb-3" style="max-width: 20rem; margin-right: 2%; margin-left: 1%;">
+  <div class="card-header"><h3>Victor Salvattori & Elle Fanning</h3></div>
+  <div class="card-body text-primary">
+    <h4 class="card-title"><strong>12.12.2032</strong></h4>
+    <p class="card-text">
+      salvatas97@gmail.com<br>
+      Lê Six<br>
+      12 horas de evento<br>
+      Casamento<br>
+      780 pessoas
+
+    </p>
+  </div>
+</div>

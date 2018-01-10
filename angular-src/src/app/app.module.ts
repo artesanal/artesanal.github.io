@@ -19,12 +19,14 @@ import { EventosComponent } from './components/eventos/eventos.component';
 
 
 import {AuthService} from "./services/auth.service";
-import {FlashMessagesModule} from 'angular2-flash-messages';
-
+import {ValidateService} from "./services/validate.service";
+import {DataService} from "./services/data.service";
 
 import {AuthGuard} from "./guards/auth.guard";
+import {FlashMessagesModule} from 'angular2-flash-messages';
 import {LoggedInGuard} from "./guards/logged-in.guard";
-import {ValidateService} from "./services/validate.service";
+
+
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
@@ -59,7 +61,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule.forRoot(),
   ],
-  providers: [ValidateService, AuthService, AuthGuard, LoggedInGuard],
+  providers: [ValidateService, AuthService, AuthGuard, LoggedInGuard, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

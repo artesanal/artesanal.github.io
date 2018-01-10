@@ -12,6 +12,15 @@
     <label>CPF</label>
     <input type="number" class="form-control" placeholder="xxx.xxx.xxx-xx" [(ngModel)]="cpf" name="cpf">
 
+    <label>Telefone</label>
+    <input type="tel" class="form-control" placeholder="12981910942" [(ngModel)]="tel" name="tel">
+
+    <label>Data</label>
+    <input type="date" class="form-control" placeholder="12.12.2032" [(ngModel)]="dEvento" name="dEvento">
+
+    <label>Email</label>
+    <input type="email" class="form-control" placeholder="exemplo@exemplo" [(ngModel)]="email" name="email">
+
   </div>
   <div class="jumbotron" >
     <h2>Evento</h2>
@@ -21,13 +30,77 @@
 
     <label>Espaço</label>
     <input type="text" class="form-control" placeholder="Le Six" [(ngModel)]="espaco" name="espaco">
-  </div>
-  <!--<div class="jumbotron">
-    <h2>Serviço</h2>
+
+    <label>Endereço</label>
+    <input type="text" class="form-control" placeholder="rua fulana, Bairo tal, n°0" [(ngModel)]="end" name="end">
+
+    <label>N° Convidados</label>
+    <input type="number" class="form-control" placeholder="100" [(ngModel)]="convidados" name="convidados">
+
+    <label>Duração</label>
+    <input type="number" class="form-control" placeholder="5" [(ngModel)]="duracao" name="duracao">
+
+    <label>Hora de Inicio</label>
+    <input type="time" class="form-control" placeholder="12:00" [(ngModel)]="horaInicio" name="horaInicio">
   </div>
   <div class="jumbotron">
-    <h2>Verificar</h2>
-  </div>-->
+    <h2>Serviço</h2>
+    <div class="jumbotron">
+      <h2>Bebidas</h2>
+      <label>Cerveja</label>
+      <input type="text" class="form-control" placeholder="Skol" [(ngModel)]="cerveja" name="cerveja">
+
+      <label>Agua</label>
+      <input type="text" class="form-control" placeholder="com e sem gás" [(ngModel)]="agua" name="agua">
+
+      <label>Refrigerantes</label>
+      <input type="text" class="form-control" placeholder="Coca-cola e Guaraná Antártica" [(ngModel)]="refrigerante" name="refrigerante">
+
+      <label>Suco</label>
+      <input type="text" class="form-control" placeholder="Maracuja, Acerola, Uva" [(ngModel)]="suco" name="suco">
+    </div>
+    <div class="jumbotron">
+      <h2>Entradas</h2>
+      <label>Entradas</label>
+      <textarea type="text" class="form-control" rows="5" placeholder="5 Opções" [(ngModel)]="entradas" name="entradas"></textarea>
+    </div>
+    <div class="jumbotron">
+      <h2>Grelhados ou saladas</h2>
+      <label>Opção</label>
+      <input type="text" class="form-control" placeholder="Salmão com manga" [(ngModel)]="gresal" name="gresal">
+    </div>
+
+    <div class="jumbotron">
+      <h2>Serviço Quentes</h2>
+      <label>Assados</label>
+      <textarea type="text" class="form-control" rows="5" placeholder="4 Opções" [(ngModel)]="assados" name="assados"></textarea>
+
+      <label>Fritos</label>
+      <textarea type="text" class="form-control" rows="5" placeholder="6 Opções" [(ngModel)]="fritos" name="fritos"></textarea>
+
+      <label>Comidinhas</label>
+      <textarea type="text" class="form-control" rows="5" placeholder="4 Opções" [(ngModel)]="comidinhas" name="comidinhas"></textarea>
+    </div>
+    <div class="jumbotron">
+      <h2>Bolos ou Sobremesas</h2>
+      <label>Opção</label>
+      <input type="text" class="form-control" placeholder="Brownie de chocolate" [(ngModel)]="sobremesa" name="sobremesa">
+    </div>
+    <div class="jumbotron">
+      <h2>Ilha da Baladas</h2>
+      <label>Opção</label>
+      <input type="text" class="form-control" placeholder="Churros" [(ngModel)]="ilha" name="ilha">
+    </div>
+  </div>
+
+  <div class="jumbotron">
+    <h2>Pagamento</h2>
+    <label>Tipo</label>
+    <input type="text" class="form-control" placeholder="Cartão" [(ngModel)]="tipoPagamento" name="tipoPagamento">
+
+    <label>Valor por Pessoa</label>
+    <input type="Number" class="form-control" placeholder="10000" [(ngModel)]="valorP" name="valorP">
+  </div>
   <button type="submit" value="Salvar" class="btn btn-outline-success">Salvar</button>
 </form>
 

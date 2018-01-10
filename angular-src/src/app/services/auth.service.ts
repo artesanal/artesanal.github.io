@@ -57,28 +57,4 @@ export class AuthService {
     localStorage.clear();
   }
 
-
-
-  //Contratos
-  registerContrato(contrato){
-    let headers = new Headers();
-    headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3000/users/register/contrato', contrato, {headers:headers})
-      .map(res => res.json());
-  }
-
-  getContrato(){
-    let headers = new Headers();
-    headers.append('Content-Type','application/json');
-    return this.http.get('http://localhost:3000/users/eventos', {headers:headers})
-      .map(res => res.json());
-  }
-
-  authenticateContrato(contrato){
-    let headers = new Headers();
-    headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3000/users/contratos', contrato, {headers:headers})
-      .map(res => res.json());
-    
-  }
 }
