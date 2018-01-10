@@ -11,7 +11,7 @@ import {FlashMessagesService} from "angular2-flash-messages";
 })
 export class EventosComponent implements OnInit {
 
-   contrato: Object;
+   bolas: Array<any>;
    name: String;
    rg: Number;
    cpf: Number;
@@ -37,7 +37,7 @@ export class EventosComponent implements OnInit {
        if(data.success){
          this._flashMessages.show('You Have contracts', {cssClass: 'alert-success', timeout: 5000});
          this.authService.getContrato().subscribe(evento => {
-             this.contrato = evento;
+             this.bolas = evento;
            },
            err => {
              console.log(err);

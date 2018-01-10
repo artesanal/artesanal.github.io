@@ -37,7 +37,7 @@ module.exports.getContratoAll = function (name, callback) {
 };
 
 module.exports.getContratoById = function (id, callback) {
-    User.findById(id, callback);
+    Contract.findById(id, callback);
 };
 
 module.exports.addContrato = function (newContrato, callback){

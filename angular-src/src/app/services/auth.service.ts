@@ -59,7 +59,7 @@ export class AuthService {
 
 
 
-  //Salvar Contratos
+  //Contratos
   registerContrato(contrato){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
@@ -79,5 +79,6 @@ export class AuthService {
     headers.append('Content-Type','application/json');
     return this.http.post('http://localhost:3000/users/contratos', contrato, {headers:headers})
       .map(res => res.json());
+    
   }
 }

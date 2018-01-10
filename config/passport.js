@@ -18,15 +18,6 @@ module.exports = function (passport) {
                 return done(null, false);
             }
         });
-        Contract.getContratoById(jwt_payload.data._id, (err, contract)=>{
-            if(err){
-                return done(err, false);
-            }if(contract){
-                return done(null, contract);
-            }else {
-                return done(null, false);
-            }
-        });
 
 
     }));
