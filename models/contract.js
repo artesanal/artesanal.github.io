@@ -12,7 +12,7 @@ const ContratoSchema = mongoose.Schema({
     tel: {type: Number, required:true},
     dEvento:{type:String, required: true},
     email: {type: String, required:true},
-
+/*
 
     tipo:{type:String, required:true},
     espaco:{type: String, required: true},
@@ -34,7 +34,7 @@ const ContratoSchema = mongoose.Schema({
 
     tipoPagamento: {type :String, required:true},
     valorP: {type :Number, required:true},
-
+*/
 
 });
 

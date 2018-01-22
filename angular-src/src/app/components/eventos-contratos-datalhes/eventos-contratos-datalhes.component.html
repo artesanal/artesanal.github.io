@@ -1,0 +1,10 @@
+<div *ngIf="contrato">
+  <h2>{{ contrato.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{contrato._id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="contrato.name" placeholder="name"/>
+    </label>
+  </div>
+  <button (click)="goBack()" class="btn btn-secondary">go back</button>
+</div>

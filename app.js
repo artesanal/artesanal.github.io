@@ -49,7 +49,7 @@ require('./config/passport')(passport);
 
 //Index route
 app.get('/', (req,res) =>{
-    res.send('Invalid Endpoint');
+    res.send('Rodando');
 });
 
 app.use('/users', users);

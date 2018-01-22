@@ -43,6 +43,22 @@ router.get('/contratos', (req, res) => {
     });
 });
 
+router.get('/contratos/:id', function(req, res, next) {
+    const id = req.params.id;
+    const details = { '_id': new ObjectID(id) };
+    connection((db) => {
+        db.collection('contracts')
+            .findOne(details, (err, item) =>{
+                if(err){
+                    res.send({'error':'an error has occured'});
+                }else{
+                    res.json(item);
+                }
+            })
+    });
+});
+
+
 router.post('/register/contrato', (req, res, next)=>{
     let newContrato = new Contract({
         name: req.body.name,
@@ -51,7 +67,7 @@ router.post('/register/contrato', (req, res, next)=>{
         tel: req.body.tel,
         dEvento: req.body.dEvento,
         email: req.body.email,
-
+/*
         tipo: req.body.tipo,
         espaco: req.body.espaco,
         end: req.body.end,
@@ -72,6 +88,7 @@ router.post('/register/contrato', (req, res, next)=>{
 
         tipoPagamento: req.body.tipoPagamento,
         valorP: req.body.valorP
+        */
     });
     Contract.addContrato(newContrato, (err, contrato)=>{
         if(err){

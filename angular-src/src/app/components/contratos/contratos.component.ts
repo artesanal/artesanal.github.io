@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Router} from "@angular/router";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {DataService} from "../../services/data.service";
+import * as jsPDF from 'jspdf';
+
 
 @Component({
   selector: 'app-contratos',
@@ -11,12 +13,20 @@ import {DataService} from "../../services/data.service";
 
 export class ContratosComponent implements OnInit {
 
+  downloadPDF(){
+    const doc = new jsPDF();
+    doc.text('some text here', 10, 10);
+    doc.save('arroz.pdf');
+  }
+
   name: String;
   rg: Number;
   cpf: Number;
   tel: Number;
   dEvento: String;
   email: String;
+
+
 
   tipo: String;
   espaco: String;
@@ -46,7 +56,9 @@ export class ContratosComponent implements OnInit {
     private _flashMessages: FlashMessagesService,
   ) { }
 
-  ngOnInit() {
+  ngOnInit(){
+    // Add simple text
+
   }
 
   onRegisterSubmit() {
@@ -56,8 +68,9 @@ export class ContratosComponent implements OnInit {
       cpf: this.cpf,
       tel: this.tel,
       dEvento: this.dEvento,
-      email: this.email,
-
+      email: this.email
+    }
+      /*
       tipo: this.tipo,
       espaco: this.espaco,
       end: this.end,
@@ -78,7 +91,8 @@ export class ContratosComponent implements OnInit {
 
       tipoPagamento: this.tipoPagamento,
       valorP: this.valorP
-    }
+      */
+
 
     this.dataService.registerContrato(contrato).subscribe(data => {
       if(data.success){
