@@ -24,7 +24,7 @@ import {DataService} from "./services/data.service";
 import {AuthGuard} from "./guards/auth.guard";
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {LoggedInGuard} from "./guards/logged-in.guard";
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { EventosContratosDatalhesComponent } from './components/eventos-contratos-datalhes/eventos-contratos-datalhes.component';
 
 

@@ -1,10 +1,209 @@
-<div *ngIf="contrato">
-  <h2>{{ contrato.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{contrato._id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="contrato.name" placeholder="name"/>
-    </label>
+
+<div class="container" *ngIf="contratos">
+  <div class="card">
+    <div class="header">
+      <div class="row">
+        <div class="col nome">
+          {{ contratos.name}}
+        </div>
+        <div class="col data text-right">
+          <span class="badge badge-pill badge-dark">Data: {{contratos.dEvento}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="detail">
+      <div class="row">
+        <div class="col text-left">Local: Lê Six</div>
+        <div class="col">Convidados: 780 pessoas</div>
+        <div class="w-100"></div>
+        <div class="col text-left">Duração: 14 horas</div>
+        <div class="col">Inicio: 00:00 hs</div>
+        <div class="w-100"></div>
+        <div class="col"><button class="btn btn-info" (click)="downloadPDF()">Download</button></div>
+      </div>
+
+    </div>
+    <div class="footer">
+      <button type="button" class="btn btn-primary" (click)="toggle()">{{btnText}}</button>
+      <div *ngIf="btnText === btnTextHide" >
+
+        <div id="contrato" class="jumbotron">
+            <div class="modal-header ContratoTitulo" >
+              PRESTAÇÃO DE PRESTAÇÃO DE SERVIÇOS
+            </div>
+            <div class="info">
+              CLIENTE:<br>
+              RG:<br>
+              CPF:<br>
+              TELEFONE:<br>
+              E-MAIL:<br>
+              DATA:<br>
+              LOCAL:<br>
+              HORÁRIO:<br>
+              NUMERO DE CONVIDADOS:<br>
+              DURAÇÃO:<br>
+              TIPO DE EVENTO:<br>
+              TIPO DE CARDÁPIO:<br>
+            </div>
+            <div class="contrato">
+              <br>CONSULTORA:  Neide<br>
+              <p>
+                O presente instrumento tem como objetivo firmar o compromisso de prestação de serviços entre:
+                Como, contratado ARTESANAL BUFFET LTDA ME, inscrita regularmente sob o cnpj n. 57.531.048/0001-43. Com endereço COMERCIAL (escritório) na rua coronel manoel martins junior,740 jardim esplanada, são jose dos campos-sp, fone: 39373093 /9.8811.57.29 . Denominado como CONTRATADO. Representada pela sua sócia proprietária neide cardoso de andrade, brasileira, empresária, a qual declara possuir poderes para assinar este instrumento de contrato, em conjunto ou separadamente.
+              </p>
+
+              1 – SERVIÇO E NUMERO DE PESSOAS:
+              1.1- O presente contrato é efetuado para a prestação de serviços de Buffet para o  número de 21212 pessoas no local, data e horários acima descritos.
+              1.2- O CONTRATADO se compromete em servir em quantidade e qualidade todos os alimentos e bebidas relacionados no cardápio escolhido pelo CONTRATANTE. Para o numero de pessoas contratadas ou seja  pessoas mais o excedente de 10% (dez por cento).
+              Para isso o CONTRATADO se responsabiliza pelo material, alimentos e pessoal, para o atendimento de no máximo PEssoas. Mesmo que mesa, louças e toalhas sejam fornecidos por decorador ou  locado em terceiro pelo CONTRATANTE,  prevalescerá a mesma regra de montagem excedente de 10 % (dez por cento).
+
+              1-3 – Se o número de convidados ultrapassar o contratado em mais de 10%, o CONTRATADO continuará a prestação de serviço conforme os recursos para o número previsto neste instrumento, ficando o CONTRATANTE responsabilizado integralmente pela provável insatisfação dos convidados, não podendo neste caso, de forma alguma, responsabilizar o contratado por qualquer danos ou falha no atendimento.
+              1-4  Os lugares reservados para crianças menores  de 8 (oito anos de idade) – não pagantes, será os lugares dentro da margem de 10% (dez por cento) de excedentes, em caso do numero de crianças  ultrapassar a media de 10% (dez por cento) o CONTRATADO, cobrara por mesa execende a ser montada o valor de 400,00 (quatrocentos reais).
+
+              2- DOS PREÇOS
+              2-1 O valor POR PESSOA É R$  ???? REAIS. O valor final deste contrato será a soma do número de convidados contratados e e forma de pagamento encontra no final do evento.
+              2-2  - O valor a ser pago por convidados  a serem acrescentado antes do dia do evento seguira a seguinte regra:
+              I-	O CONTRATANTE PODERÁ  aumentar o numero de convidados até 10 dias anterior ao evento, paganado o mesmo valor em contrato por pessoa a acrescentar, ou seja,
+              R$  ???? REAIS.
+              II -        Se o CONTRATADO não adicionar convidados anterior ao evento e no dia da realização do evento o numero de convidados ultrapassarem a quantidade em contrato O VALOR POR PESSOA EXCEDENTE SERÁ ACRESCIDO DE MULTA DE 20% DO VALOR CONTRATADO, OU SEJA -------- R$  ???? reais.
+
+              2-3 O CONTRATADO se reserva o direito de fazer a contagem dos convidados na entrada do evento, usando contador eletrônico.
+              A checagem por meio de lista de convidados com nomes e ou convites individuais será por conta do CONTRATANTE, ou empresa de assessoria contratada, que deverá fornecer ao CONTRATADO, copia da lista de convidados que compareceram, e ou convites individuais.
+              Em caso de ultrapassar o numero de convidados, o CONTRATANTE, ou um representante do mesmo, deverá assinar ficha de checagem de n. de convidados, bem como assinar autorização de emissão de boleto bancário para pagamento do execedente.
+
+              2-4 O PAGAMENTO DO NUMERO DE CONVIDADOS EXCEDIDOS AO  NUMERO EM CONTRATO  DEVERÁ SER IMEDIATO NO FINAL DO EVENTO NA FORMA DE CHEQUE OU DINHEIRO, NO CASO DO NÃO PAGAMENTO NO FINAL DO EVENTOS, O CONTRATADO EMITIRA NO PRIMEIRO DIA UTIL APÓS O EVENTO, UM BOLETO NO VALOR TOTAL DOS EXCEDENTES,  COM PRAZO DE (TREIS) DIAS UTEIS. NÃO PAGAMENTO DESTE BOLETO ACARRETARA O  IMEDIATO PROTESTO.
+              Outras formas de pagamento poderá ser negociada desde que o CONTRATANTE, PARTICIPE POR ESCRITO OU PESSOALMENTE AO CONTRATADO no primeiro dia útil após o evento.
+              2-5 - O CONTRATANTE não poderá deixar o local sem realizar este pagamento.  Em caso do CONTRATANTE se negar a realizar este pagamento o CONTRATADO se reserva o direito de não liberar o local do evento até que o pagamento em questão seja realizado. Neste caso as multas por ocupação do local serão de total responsabilidade do CONTRATANTE.
+
+              3- FORMAS DE PAGAMENTO:
+              As formas de pagamento aceitas pelo CONTRATADO SÃO:
+              dinheiro (moeda nacional), transferência bancaria e ou cheques a vista ou pré datados.
+
+              3-1 CONTRATANTE não terá direito a receber a diferença entre o número de convidados que efetivamente comparecer se este for menor que o contratado, uma vez que a estrutura foi desenvolvida para atender o número de convidados previstos neste contrato.
+              3-2  O não pagamento até a data do evento, OU devolução de cheques deverá ser quitado até 10 dias anterior ao evento. O não cumprimento desta norma resultará no cancelamento automático do presente instrumento, sem qualquer responsabilidade por parte do CONTRATADO.
+
+
+
+              4 –DURAÇÃO DO EVENTO:
+              A duração do serviço será pontualmente de cinco   HORAS. Depois de transcorrido este período o serviço será interrompido e haverá uma tolerância de 15 (quinze) minutos para a saída de todos os convidados do salão, após este tempo será iniciado a desmontagem geral do salão, desde retirada de copos, toalhas, flores etc...
+              4-1- Se o CONTRATANTE desejar horas adicionais no evento, poderá negociar antecipadamente com o CONTRATADO, com valores a serem fixados de acordo com numero de pessoas e cardápio.
+              Se no dia do evento o CONTRATANTE solicitar ou autorizar que o tempo de festa seja prolongado, pagará o valor mínimo de R$ 2.500,00 (dois mil e quinhentos reais) a cada hora adicional, a titulo de multa por tempo extendido sem previa negociação. Valor a ser quitado no final do evento em moeda corrente.
+
+              5- MATERIAS INCLUSOS:
+              Está incluso no serviço contratado o material necessário para realização do evento de acordo com o cardapio escolhido, tais como copos e ou taças (para todos os tipos de bebidas), talheres, pratos, toalhas e equipamentos de cozinha. No caso do cliente desejar outro tipo de material que não seja fornecido pelo buffet, o CONTRATANTE deverá fornecer ou arcar com os custos de locação dos seguintes materiais:
+              •	caminhos para mesas.
+              •	Sousplat.
+              •	Jogo americano.
+              •	Taças coloridas ou taças diferenciadas (exceto quando for descriminado como cortesia  em fechamentos de pacotes).
+              5-1 O serviço contratado contempla toda logística por conta do CONTRATADO bem como o serviço de garçons, sendo um garçom para cada 3 mesas, coordenador do evento e equipe de cozinha.
+
+              6- DA RESCISÃO E MULTA CONTRATUAL
+              O presente instrumento é celebrado em caráter irrevogável e irretratável pelas partes, vinculando ainda seus eventuais herdeiros e sucessores.
+              6-1. Ao CONTRATADO é vedada a possibilidade de solicitar o cancelamento do evento, a partir da assinatura deste instrumento, mas se o fizer, pagará igualmente a multa de 20% (vinte por cento sobre o valor dos serviços contratados ao CONTRATANTE.
+              6-2 O cancelamento somente poderá ser solicitado pelo CONTRATADO por motivos extremos em qualquer fase ou etapa, do devido à ocorrência de caso fortuito e ou força maior, assim definidos no parágrafo único do art. 393 do Código Civil, que, entre as hipóteses, ocorram por meio de fenômenos da natureza ou em casos de calamidade pública, guerra, imposições governamentais, perturbações da ordem, acidentes ou greves, entre outros, e que possam ser prejudiciais aos serviços ou coloque em risco o pessoal em serviço e participantes do evento. Neste caso as condições de negociação do cancelamento deverão ser amigáveis e excluindo as devidas multas por ambas as partes como estipuladas no item seguinte (3.3)
+              6-3 O cancelamento deste instrumento poderá ser solicitado por parte do CONTRATANTE, no prazo máximo de até 30 (trinta) dias anterior ao evento. Na hipótese de rescisão deste instrumento, por parte do CONTRATANTE, fica estipulada a multa contratual de 20% (vinte por cento) do valor total do contrato, que serão revertidos em favor do CONTRATADO, a titulo de custas de administração do contrato com reuniões, degustações e reserva da data.
+              6-4. Se uma das partes solicitar o cancelamento deste instrumento, no prazo inferior a 30 dias anterior ao evento, fica estipulada a multa de 50% do valor do contrato a titulo de perda e danos causados pelo transtorno do cancelamento, bem como pelo trabalho já efetuado pelo contratado com administração, execução de produtos, reserva de materiais e reserva de data.
+
+              7- DAS RETIRADA DE ALIMENTOS FORNECIDOS PELO CONTRATADO
+              O CONTRATADO fornecerá um kit com os alimentos que foram servidos para o CONTRATANTE.
+              7-1 - As sobras de alimentos e bebidas que são do cardapio responsabilidade do CONTRATADO  que não forem utilizados no evento, não podem ser levados pelo CONTRATANTE.
+
+              8- DA RETIRADA DE BEBIDAS E OUTROS ALIMENTOS FORNECIDOS PELO CONTRATANTE
+              As sobras de bebidas, ou alimentos fornecidos diretamente pelo CONTRATANTE, serão devolvidas integralmente, bem como será feita contagem dos utilizados no final do evento.
+
+              9- DOS DANOS MATERIAIS POR VENTURA OCORRENTES
+              O CONTRATANTE será responsável pelo pagamento imediato de quaisquer danos materiais causados ao CONTRATADO por seus convidados ou outros profissionais contratados diretamente pelo CONTRATANTE, tais como quebra de copos, mesas de vidros, taças de arranjos, ou outros danos causados por descuido e ou, atos de vandalismo, brigas, ou furto.
+              9-1 A quebra de copos e taças no salão durante o evento será comunicada no final deste, para  a equipe de cerimonial ou ao CONTRATANTE, que deverá providenciar o pagamento da quantidade de itens quebrados.
+              Em caso do não pagamento no final do evento o CONTRATADO comunicará o valor devido e emitirá um boleto para pagamento com 15 dias de prazo para a quitação do mesmo.
+              O valor de taças e copos dependerá do modelo que estiver sendo utilizado. O coordenador representante do CONTRATADO, informará o valor de acordo com o material que for danificado.
+              9-2  Os guardanapos de tecido serão contabilizados igualmente no final do evento. Se houver falta de algum, será cobrado o valor de 12,00 (doze reais) por cada unidade, visto que em todos os lugares para convidados é colocado um guardanapo de tecido. Os seguranças e recepcionistas poderão impedir que convidados utilizem de guardanapos para armazenar doces ou outros, porém na eventual falta de algum, o valor por unidade será cobrado.
+              As toalhas serão conferidas na devolução das mesmas na empresa terceirizada. Se as mesmas apresentarem manchas que não sejam removidas, ou danos causados por faca, tesouras ou queimaduras de cigarros, o CONTRATADO apresentará laudo da empresa terceirizada em 3 (três) dias úteis e o valor a ser pago pelas toalhas danificadas. O CONTRATANTE poderá pagar o valor das toalhas ou em espécie. Será aceito o material no mesmo padrão. Se o pagamento for realizado em dinheiro, o CONTRATADO apresentará 3 (três) orçamentos e o valor definido será o menor.
+              9-3 O CONTRATADO se responsabilizará por quaisquer danos causados nas instalações do local do evento bem como ao seu próprio material se este danos forem causados por pessoas que estejam prestando serviços diretamente ao CONTRATADO.
+              9-4 O CONTRATADO não se responsabiliza por materiais de outros contratados bem como por atrasos destes.
+              10- QUALIDADE DE PRODUTOS E SERVIÇOS :
+              O CONTRATADO se responsabiliza exclusivamente pela qualidade e conservação dos alimentos por ele preparados e servidos, sendo sua responsabilidade manter amostras dos produtos que foram contratados e servidos.
+              10-1   O CONTRATADO se compromete em fornecer todas as bebidas e alimentos especificadas no cardápio durante todo o tempo de evento, não deixando faltar nas mesas, zelando pelo bom atendimento pela quantidade e qualidade dos alimento e bebidas a serem servidos.
+
+              10-2  O CONTRATADO não terá nenhuma responsabilidade por produtos alimentícios e ou bebidas fornecido por terceiros, tais como: doces, bebidas e outros, ficando também a responsabilidade de observar a qualidade destes produtos do CONTRATANTE.
+              10-3 O local contratado para o evento é de exclusiva responsabilidade do CONTRATANTE, bem como as condições de higiene e limpeza do local (anterior a realização do evento). O CONTRATANTE deve observar se o local mantém a dedetização em dia, se a água fornecida para uso na cozinha e uso humano é potável. Todo e qualquer dano oriundo de má qualidade da água não é de responsabilidade do CONTRATADO.
+
+              11– DO FORNECIMENTO DE ALIMENTOS AOS PROFISSIONAIS DO EVENTO
+              O CONTRATADO fornecerá alimentos para profissionais em serviço, desde que o número de profissionais não ultrapasse em 5% (cinco) do número de convidados. Se houver maior número de fornecedores, o valor a pagar por profissional a ser servido é de 30,00,
+              (trinta reais) neste caso o fornecimento de alimento será o que o buffet dispuser, não é permitido fornecedores servir-se em aparadores de jantar.
+              11-1 O serviço de alimento para profissionais ocorrerá somente após os convidados serem servidos, que é após 2 horas do inicio do evento, em local apropriado na área de serviço, jamais no salão da festa, com os alimentos disponibilizados aos profissionais. Se o CONTRATANTE OU QUALQUER FAMILIAR OU CERIMONIALISTA AUTORIZAR PROFISSIONAIS EM SERVIÇO A SE SERVIREM NO APARADOR JUNTO COM CONVIDADOS SERÁ COBRADO O VALOR POR PESSOA COMO CONVIDADO.
+              Consideremos somente os profissionais em serviço, excluído eventuais acompanhantes (esposas/namoradas etc...). Se o CONTRATANTE autorizar servir pessoas que não sejam prestadores de serviço será cobrado o valor integral de um convidado.  Em nenhuma hipótese será servido bebidas alcoólicas para os profissionais em serviço.
+              EM NENHUMA HIPÓTESE MONTAMOS MESAS PARA PROFISSIONAIS EM SERVIÇO DENTRO DO SALÃO ONDE OS CONVIDADOS ESTARÃO SENDO SERVIDOS.
+              Não fornecemos alimentação para bandas, nenhum serviço de camarim.
+
+              12- DA RETIRADA DOS MATERIAIS UTILIZADOS NO EVENTO
+              O CONTRATADO se compromete em retirar os materiais usados nos serviços logo após o término do evento de acordo com a norma estabelecida pelo local do evento.
+              12-1 O CONTRATADO não retira, nem movimenta nenhum mobiliário ou cadeiras que esteja no local do evento. Não retiramos para entrada nem recolocamos no final do evento. Se for necessário este tipo de serviço fica por conta do CONTRATANTE  resolver a questão diretamente com o  local  contratado ou com a contratação de mão de obra para tal.
+
+              12.2- Toda e qualquer taxa que venha ser cobrada por parte do local contratado será de inteira responsabilidade do CONTRATANTE, exceto para uso de gás.
+
+              13- DEGUSTAÇÃO:
+              O cardápio será escolhido como base na degustação a ser realizada dia -_____/____
+
+              12-1- O casal poderá fazer uma segunda degustação para finalizar escolhas de cardapio.
+              Sera uma degustação junto com  outros casais. Cardapio variado e novas opções para escolha.
+              A degustação será cortesia somente para o casal. O CONTRATADO apresentara algumas datas para degustar, dentro de suas datas previstas.
+              12-3 se o CONTRATANTE desejar FAZER UMA DEGUSTAÇÃO OFICIAL poderá faze-lo com o custo individual DE 150,00 (CENTO E CINQUENTA  REAIS) POR PESSOA.
+              Degustação final não inclui bebidas e sobremesas.
+              Se o CONTRATADO desejar realizar a degustação oficial, deverá informar ao CONTRATADO, até 90 (noventa dias) anterior ao evento.
+              A não comunicação do desejo de realizar a degustação oficial, implicará no entendimento automático de que não será realizada .
+              Em caso de degustação oficial, os horrios disponibilizados pelo contratado, será de quarta ou quinta feiras, das 15:00 ou 16:00, não abrindo exceção para outros horários.
+              Em caso de degustação oficial, a data será agendada pelo CONTRATADO.
+              12-2  As substituições poderão ocorrer sem nenhum custo adicional se as mesmas forem por itens de valor similar. Se o CONTRATADO desejar adicionar itens ou fazer substituições por itens de valor superior poderá faze-lo adicionando o valor que for apresentado e negociado com o CONTRATADO
+              13-  As reuniões posteriores que se fizerem necessárias será realizadas de segunda a sexta em horário das 9:00 as 18:00 hs, outros horários poderão ser negociados, execeto para o sábado que não há possibilidade de atendimento.
+              13-1 Nosso atendimento no escritório é com hora marcada, portanto telefones fixos não tem atendimento todos os dias. Celular com WhatsApp para contato rápido (12 98811.57.29 – não respondemos mensagens após horário comercial e nem aos domingos).
+              13-2-  Atendimento telefônico é somente para  informações. As solicitações de qualquer e  ou mudanças será respondido exclusivametno por email, para que fique registrado.  As mídias WhatsApp e mensagens só devem ser utilizadas para respostas rápidas  que não interfira nos itens contratados. Não será respondido solicitação pelo facebook.
+              Sempre sempre registre as conversas por e-mail.
+
+              14- Todas as alterações que forem solicitadas por email deverão constar por escrito no contrato. O CONTRATATO se responsabiliza em enviar o contrato atualizado, semrpe que houver alguma  alteração. Assim não será considerado mudanças com acordo verbais, exija sempre por escrito tudo que foi acordado
+              15- Todas as alterações que forem solicitadas por email deverão constar por escrito no contrato. O CONTRATADO se responsabiliza em enviar o contrato atualizado, sempre que houver alguma  alteração. Assim não seram consideradas mudanças com acordo verbais, exija sempre por escrito tudo que foi acordado .
+
+              16 - O CONTRATADO não se responsabiliza por montagem de serviços de terceiros, tais como DOCES NA MESA DO BOLO e CADEIRAS ou qualquer serviço não relacionado ao serviço do buffet descrito neste contrato.
+              17 - O CONTRATANTE confirma que leu e aprovou todos os itens descritos neste instrumento e que concordou com os mesmos.
+
+              18- Fica eleito o foro da Comarca de São José dos Campos para dirimir quaisquer divergências que por ventura decorram deste instrumento, não privilegiando nenhum outro, pelo que assinam o presente, na presença de duas testemunhas se assim o contratante desejar.
+            </div>
+            CARDÁPIO:
+
+            NO FECHAMENTO DO BUFFET
+            DECOR –???
+            Bar???
+
+
+
+            .
+
+
+            PAGAMENTO:
+
+            SINAL
+
+
+            RESTANTE QUITAR DIA ??
+
+
+
+            _____________________________
+            Nome do cliente
+
+
+
+            ________________________________
+            ARTESANAL BUFFET LTDA ME
+
+
+
+
+
+            São José dos campos,
+          </div>
+        </div>
+      <button (click)="goBack()" class="btn btn-secondary">go back</button>
+    </div>
   </div>
-  <button (click)="goBack()" class="btn btn-secondary">go back</button>
+
 </div>

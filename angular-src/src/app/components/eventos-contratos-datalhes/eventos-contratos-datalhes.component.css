@@ -1,0 +1,44 @@
+div.card{
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+div.header{
+  background-color: darkgoldenrod;
+  color: black;
+  padding: 10px;
+  font-size: 10px;
+}
+div.nome{
+  font-size: 30px;
+  font-family: Snell Roundhand, cursive;
+  font-style: italic;
+}
+div.data{
+  font-size: 30px;
+}
+div.detail{
+  padding: 30px;
+  font-size: 20px;
+}
+div.footer{
+  padding: 10px;
+  background-color: #4A4A4A;
+}
+
+/*Contrato*/
+
+div.ContratoTitulo{
+  font-size: 25px;
+}
+div.info{
+  font-size: 15px;
+  text-align: left;
+}
+div.contrato{
+  font-size: 15px;
+  text-align: left;
+}
+div.funcoes{
+  align-items: right;
+}

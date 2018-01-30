@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import {Router} from "@angular/router";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {DataService} from "../../services/data.service";
-import * as jsPDF from 'jspdf';
 
 
 @Component({
@@ -13,11 +12,6 @@ import * as jsPDF from 'jspdf';
 
 export class ContratosComponent implements OnInit {
 
-  downloadPDF(){
-    const doc = new jsPDF();
-    doc.text('some text here', 10, 10);
-    doc.save('arroz.pdf');
-  }
 
   name: String;
   rg: Number;

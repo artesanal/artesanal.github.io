@@ -3,19 +3,6 @@
   padding: 0;
 }
 
-ul{
-  list-style-type: none;
-  width: 15%;
-  position: fixed;
-  height: 100%;
-  line-height: 60px;
-  background-color: #28415b;
-}
-
-ul li{
-  display: block;
-  width: 100%;
-}
 
 ul li a{
   display: block;
@@ -24,3 +11,19 @@ ul li a{
   color: white;
 }
 
+nav{
+  list-style-type: none;
+  width: 15%;
+  position: fixed;
+  height: 100%;
+  line-height: 60px;
+  background-color: #158CBA;
+}
+
+div{
+  display: block;
+  width: 100%;
+}
+button{
+  height: 60px;
+}

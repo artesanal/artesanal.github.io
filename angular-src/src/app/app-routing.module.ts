@@ -27,14 +27,7 @@ const appRoutes: Routes = [
   {path:'', redirectTo:'/contratos', pathMatch: 'full'},
   { path: 'detail/:id', component: EventosContratosDatalhesComponent },
 ];
-/*
-const eventosRoutes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: EventosDashboardComponent },
-  { path: 'detail/:id', component: EventosContratosDatalhesComponent },
-  { path: 'heroes', component: EventosContratosComponent }
-];
-*/
+
 @NgModule({
   imports: [ RouterModule.forRoot(appRoutes) ],
   exports: [ RouterModule ]

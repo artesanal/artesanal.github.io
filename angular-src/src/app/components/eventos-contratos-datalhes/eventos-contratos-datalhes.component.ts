@@ -1,9 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, ViewChild, ElementRef} from '@angular/core';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 import { Location } from '@angular/common';
 import { Contrato } from '../eventos/contrato';
 import {DataService} from "../../services/data.service";
 import 'rxjs/add/operator/switchMap';
+import * as jsPDF from 'jspdf';
+import * as pdfMake from 'pdfmake/build/pdfmake.js';
+import * as pdfFonts from 'pdfmake/build/vfs_fonts.js';
+import {StringIterator} from "lodash";
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
+
 
 
 @Component({
@@ -13,7 +20,14 @@ import 'rxjs/add/operator/switchMap';
 })
 export class EventosContratosDatalhesComponent implements OnInit {
 
-  @Input() contrato: Contrato;
+  btnTextShow: String = 'Mostrar Contrato';
+  btnTextHide: String = 'Esconder Contrato';
+
+  btnText: String = this.btnTextShow;
+
+
+
+  @Input() contratos: Contrato[];
   private sub: any;
   private det:any;
 
@@ -23,20 +37,51 @@ export class EventosContratosDatalhesComponent implements OnInit {
     private location: Location
   ) { }
 
+  public downloadPDF(){
+    let prep = document.getElementById("contrato").textContent;
+    var docDefinition = { content:
+        [
+          {
+            text: prep,
+            style: 'header'
+
+          }
+
+        ],
+      styles:
+        {
+          header: {
+            fontSize: 12,
+            bold: false
+          }
+        }
+    };
+    pdfMake.createPdf(docDefinition).open();
+  }
+
+
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-
-      let id = params['id'];
-
-      this.dataService.getContrato(id).subscribe(det => this.det = det);
-
-    });
+    const id = this.route.snapshot.paramMap.get('id');
+    this.dataService.getContrato(id)
+      .map((data: any) => data.json())
+      .subscribe(
+        (data: any) => {
+          this.contratos = data;
+        });
 
   }
 
 
   goBack(): void {
     this.location.back();
+  }
+
+  toggle(): void{
+    if(this.btnText === this.btnTextShow){
+      this.btnText = this.btnTextHide
+    }else{
+      this.btnText = this.btnTextShow
+    }
   }
 
 }
